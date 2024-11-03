@@ -36,6 +36,7 @@ createBoxes();
 function destroyBoxes() {
     boxes.innerHTML = "";
     input.value = "";
+    counterValue = 0;
 }
 
 
