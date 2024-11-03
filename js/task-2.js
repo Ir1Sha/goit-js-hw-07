@@ -25,18 +25,14 @@ const images = [
       },
     ];
     
-const imageList = document.querySelector(".gallery")
+const imageList = document.querySelector(".gallery");
 
 function  createMarkup(images) {
     images.forEach(img => {
-    const image = document.createElement("img");
+    const image = document.createElement("img")
     image.src = img.url
     image.alt = img.alt
-    image.width = "450"
-
-    imageList.style = "list-style-type: none";
-    imageList.style.display = "flex-box";
-    imageList.style.gap = "25px";
+    image.width = "360"
     
 
     imageList.append(document.createElement("li"),image)

@@ -1,0 +1,27 @@
+/* Gallery Styles */
+.gallery {
+    list-style-type: none;
+    padding: 0;
+    margin: 24px auto;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 48px;
+    justify-content: center;
+    max-width: 1440px;
+}
+
+/* Each item */
+.gallery-item {
+    flex: 1 1 calc(33.33% - 25px);
+    display: flex;
+    justify-content: center;
+}
+
+.gallery-item img {
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
