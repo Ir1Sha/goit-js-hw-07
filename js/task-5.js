@@ -10,8 +10,10 @@ function handleClick(event) {
 }
 
 function getRandomHexColor() {
-    return `#${Math.floor(Math.random() * 16777215)
-      .toString(16)
-      .padStart(6, 0)}`;
-  }
+    let color;
+    do {
+        color = `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0)}`;
+    } while (color.length !== 7);
+    return color;
+}
   

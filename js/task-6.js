@@ -15,23 +15,26 @@ function handleInput(event) {
 }
 
 function createBoxes() {
+    if (counterValue < 1 || counterValue > 100) {
+        return;
+    }
+
     let width = 30;
     let height = 30;
+    let markup = "";
 
     for (let i = 1; i <= counterValue; i += 1) {
-        const div = document.createElement("div");
-        div.style.width = `${width}px`;
-        div.style.height = `${height}px`;
-        div.style.backgroundColor = getRandomHexColor();
-
+        const color = getRandomHexColor();
+        markup += `<div style="width: ${width}px; height: ${height}px; background-color: ${color};"></div>`;
+        
         width += 10;
         height += 10;
-
-        boxes.appendChild(div);
     }
-}
 
-createBoxes();
+    boxes.innerHTML = markup;
+    input.value = "";
+    counterValue = 0;
+}
 
 function destroyBoxes() {
     boxes.innerHTML = "";
@@ -39,11 +42,9 @@ function destroyBoxes() {
     counterValue = 0;
 }
 
-
-
 function getRandomHexColor() {
     return `#${Math.floor(Math.random() * 16777215)
       .toString(16)
       .padStart(6, 0)}`;
-  }
+}
   

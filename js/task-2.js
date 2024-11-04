@@ -25,18 +25,15 @@ const images = [
       },
     ];
     
-const imageList = document.querySelector(".gallery");
+    const imageList = document.querySelector(".gallery");
 
-function  createMarkup(images) {
-    images.forEach(img => {
-    const image = document.createElement("img")
-    image.src = img.url
-    image.alt = img.alt
-    image.width = "360"
+    function createMarkup(images) {
+    const markup = images.map(img => {
+        return `<li><img src="${img.url}" alt="${img.alt}" width="360" height="260"></li>`;
+      }).join("");
     
 
-    imageList.append(document.createElement("li"),image)
-});
-}
-createMarkup(images);
+    imageList.innerHTML = markup;
+    }
 
+    createMarkup(images);
